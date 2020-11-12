@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react';
-// import './Home.css';
 import './customHome.css';
 import CompassImg from './img/compass.png';
 import * as firebase from 'firebase';
