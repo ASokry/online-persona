@@ -1,20 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Home from './pages/home/Home';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
-import Profile from './pages/profile/Profile.js';
+// Import all Pages
+import About from './pages/about/About.js';
+import Form from './pages/form/Form.js';
+import Visuals from './pages/visuals/Visuals.js';
+import Compass from './pages/visuals/Compass.js';
+//
 import * as firebase from 'firebase';
 
 var firebaseConfig = {
-  apiKey: "AIzaSyBe3frfm83ziBBzwjb5U8taGHxavs6KpmU",
-  authDomain: "testing-8fda4.firebaseapp.com",
-  databaseURL: "https://testing-8fda4.firebaseio.com",
-  projectId: "testing-8fda4",
-  storageBucket: "testing-8fda4.appspot.com",
-  messagingSenderId: "496920794938",
-  appId: "1:496920794938:web:7b8b79a13b32fd9ee52203",
-  measurementId: "G-Q3C0W21C3R"
+  apiKey: process.env.REACT_APP_APIKEY,
+  authDomain: process.env.REACT_APP_AUTHDOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASEURL,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGEBUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
+  appId: process.env.REACT_APP_APPID,
+  measurementId: process.env.REACT_APP_MEASUREMENTID
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -24,7 +30,10 @@ const routing = (
   <Router>
     <div>
       <Route exact path="/" component={Home} />
-      <Route path="/profile" component={Profile} />
+      <Route path="/about" component={About} />
+      <Route path="/form" component={Form} />
+      <Route path="/visuals" component={Visuals} />
+      <Route path="/compass" component={Compass}/>
     </div>
   </Router>
 )
