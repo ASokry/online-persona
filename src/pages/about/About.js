@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import './About.css';
+import { Link } from 'react-router-dom';
 
 export default function AboutPage() {
   return (
@@ -9,7 +10,7 @@ export default function AboutPage() {
         <div className="about-description">
           A project serving as an exploration of how people interpret and associate with their online identities and internet personas to reveal hidden connections within the collective unconscious.
         </div>
-        <nav><a href="./">HOME</a> | <a href="./form">TAKE THE SURVEY</a> | <a href="/about">ABOUT</a></nav>
+        <nav><Link to="/">HOME</Link> | <Link to="/form">TAKE THE SURVEY</Link> | <Link to="/about">ABOUT</Link></nav>
       </div>
 
       <div className="about-visuals">

@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import HomePage from './pages/home/Home';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
-// Import all Pages
-import AboutPage from './pages/about/About';
-import MyForm from './pages/form/Form.js';
-import CompassPage from './pages/visuals/Compass.js';
-//
+// import HomePage from './pages/home/Home';
+// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// // Import all Pages
+// import AboutPage from './pages/about/About';
+// import MyForm from './pages/form/Form.js';
+// // import CompassPage from './pages/visuals/Compass.js';
+import MyRoute from './route';
+// Import Firebase
 import * as firebase from 'firebase';
 
 var firebaseConfig = {
@@ -23,19 +24,19 @@ var firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-const url = process.env.PUBLIC_URL;
-//Generating routes
-const routing = (
-  <BrowserRouter basename="/pages/home">
-    <Switch>
-      <Route path= {url + "/about"} component={AboutPage} />
-      <Route path= {url + "/form"} component={MyForm} />
-      {/* <Route path= {url + "/compass"} component={CompassPage}/> */}
-      <Route path="/" component={HomePage} />
-    </Switch>
-  </BrowserRouter>
-)
 
-ReactDOM.render(routing,
+//Generating routes
+// const routing = (
+//   <Router>
+//     <Switch>
+//       <Route path= "/about" component={AboutPage} />
+//       <Route path= "/form" component={MyForm} />
+//       {/* <Route path= {url + "/compass"} component={CompassPage}/> */}
+//       <Route path="/" component={HomePage} />
+//     </Switch>
+//   </Router>
+// )
+
+ReactDOM.render(<MyRoute></MyRoute>,
   document.getElementById('root')
 );

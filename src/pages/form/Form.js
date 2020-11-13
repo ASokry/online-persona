@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import { Button, CustomInput, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './Form.css'
 import * as firebase from 'firebase';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function MyForm() {
     const [idNum,setIdNum] = useState(0);
@@ -100,7 +100,7 @@ export default function MyForm() {
         // console.log("submitted");
         event.preventDefault();
         writeUserData();
-        window.location.href = "/about";
+        window.location.href = process.env.PUBLIC_URL + "/#/about";
     }
 
     // console.log(onlineTime + whatTime);
@@ -317,7 +317,7 @@ export default function MyForm() {
         <div className="form">
             {/* {users && users.map((stuff,index)=>(
                 <h1 key={index}> 
-                    {stuff.name} {stuff.number} {stuff.option}
+                    {stuff.age}
                 </h1>
             ))} */}
 
@@ -326,7 +326,7 @@ export default function MyForm() {
                 <div className="form-description">
                   Take your time filling out this form. After the form has been filled out completely, please click on the Submit button at the bottom of the page.
                 </div>
-                <nav><a href="./">HOME</a> | <a href="/form">TAKE THE SURVEY</a> | <a href="./about">ABOUT</a></nav>
+                <nav><Link to="/">HOME</Link> | <Link to="/form">TAKE THE SURVEY</Link> | <Link to="/about">ABOUT</Link></nav>
             </div>
             <div className="form-questions">
               {Example()}
