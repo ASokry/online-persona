@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import './About.css';
 
-function AboutPage() {
+export default function AboutPage() {
   return (
     <div className="about">
       <div className="about-header">
@@ -35,5 +35,3 @@ function AboutPage() {
     </div>
   );
 }
-
-export default AboutPage;
