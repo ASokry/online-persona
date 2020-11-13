@@ -7,7 +7,6 @@ const CompassSketch = () => {
     var cnv;
     var data;
     var keys;
-    var dots = [];
     let gXrange;
     let gYrange;
     let size = 30;
