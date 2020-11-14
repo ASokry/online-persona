@@ -14,11 +14,12 @@
     font-size: 18px;
 }
 
-nav {
+.form nav {
     margin-top: 1em;
     margin-bottom: 2em;
     text-align: center;
     font-size: 18px;
+    font-weight: bold;
 }
 
 .question-title {

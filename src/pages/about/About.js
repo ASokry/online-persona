@@ -8,6 +8,7 @@ export default function AboutPage() {
       <div className="about-header">
         <h1>Online <b style={{color: "#9900ff"}}>Persona</b></h1>
         <div className="about-description">
+          <h3 className="about-sub">About the Project</h3>
           A project serving as an exploration of how people interpret and associate with their online identities and internet personas to reveal hidden connections within the collective unconscious.
         </div>
         <nav><Link to="/">HOME</Link> | <Link to="/form">TAKE THE SURVEY</Link> | <Link to="/about">ABOUT</Link></nav>
@@ -23,7 +24,7 @@ export default function AboutPage() {
         <div className="visual">
           <h4>Word Scrolling</h4>
           <div>
-          Personal definitions of what is an online persona scroll from the right side to the left. A way to truly best witness any underlying connections that we all have in how we view and define online personas.
+          Personal definitions of what is an online persona scroll from the right side to the left. A way to truly best witness any underlying connections that we all have in viewing and defining online personas.
           </div>
         </div>
         <div className="visual">
