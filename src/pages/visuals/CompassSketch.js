@@ -2,7 +2,7 @@ import React,{useEffect} from "react";
 import * as p5 from "p5";
 import * as firebase from 'firebase';
 
-const CompassSketch = () => {
+const CompassSketch = props => {
   const Sketch = p5 => {
     var cnv;
     var data;
@@ -35,6 +35,10 @@ const CompassSketch = () => {
       cnv.position(x, y);
       p5.noStroke();
     };
+
+    p5.mouseClicked = () => {
+      console.log('hi');
+    }
   
     p5.draw = () => {
       p5.background(254,222,168);

@@ -2,12 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-// import HomePage from './pages/home/Home';
-// import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-// // Import all Pages
-// import AboutPage from './pages/about/About';
-// import MyForm from './pages/form/Form.js';
-// // import CompassPage from './pages/visuals/Compass.js';
+
 import MyRoute from './route';
 // Import Firebase
 import * as firebase from 'firebase';
@@ -37,6 +32,8 @@ firebase.initializeApp(firebaseConfig);
 //   </Router>
 // )
 
-ReactDOM.render(<MyRoute></MyRoute>,
-  document.getElementById('root')
+ReactDOM.render(
+    <MyRoute></MyRoute>,
+    document.getElementById('root'
+  )
 );
