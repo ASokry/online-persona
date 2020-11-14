@@ -41,7 +41,8 @@ const CompassSketch = props => {
     }
   
     p5.draw = () => {
-      p5.background(254,222,168);
+      p5.background(0);
+      // p5.background(254,222,168);
       var ref = firebase.database().ref('responses');
       
       var width = p5.windowWidth;
