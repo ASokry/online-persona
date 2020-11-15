@@ -1,12 +1,15 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect, Component} from 'react';
 import { Button, CustomInput, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './Form.css'
 import * as firebase from 'firebase';
+import * as p5 from 'p5';
 import { Link } from 'react-router-dom';
 
-export default function MyForm() {
+export default function MyForm(props){
     const [idNum,setIdNum] = useState(0);
     const [users,setUsers] = useState([]);
+    const [confirmed, setConfirmed] = useState(false);
+    const [test, setTest] = useState({x:'hello'});
 
     //// Question Variables
     const [ageGroups] = useState(["youth", "young adult", "middle age", "older age"]);
@@ -99,12 +102,19 @@ export default function MyForm() {
     function handleSubmit(event) {
         // console.log("submitted");
         event.preventDefault();
-        writeUserData();
-        window.location.href = process.env.PUBLIC_URL + "/#/about";
+        // writeUserData();
+        setConfirmed(true);
+        // window.location.href = process.env.PUBLIC_URL + "/#/about";
+    }
+
+    function goToAbout() {
+      window.location.href = process.env.PUBLIC_URL + "/#/about";
+      // console.log("print");
+      window.location.reload();
     }
 
     // console.log(onlineTime + whatTime);
-    const Example = () => {
+    const Survey = () => {
         return (
           <Form onSubmit={(event)=>{handleSubmit(event)}}>
             <FormGroup tag="fieldset">
@@ -329,8 +339,175 @@ export default function MyForm() {
                 <nav><Link to="/">HOME</Link> | <Link to="/form">TAKE THE SURVEY</Link> | <Link to="/about">ABOUT</Link></nav>
             </div>
             <div className="form-questions">
-              {Example()}
+              {!confirmed && Survey()}
+              {confirmed && <Result age={ageGroup} 
+                gen={genderIRL} 
+                genPer={genderPersona.objects} 
+                think={thinkOften} 
+                speech={speakPersona}
+                numOfPer={numPersona}
+                digitalR={digitalRep}
+                place={twoPlaces}
+                ver={versionPersona}
+                goToAbout={goToAbout}
+              />}
+              
             </div>
         </div>
     );
-}
+};
+
+const Result = ({age,gen,genPer,think,speech,numOfPer,digitalR,place,ver,goToAbout}) => {
+  const Sketch = p5 => {
+    var cnv;
+    let gXrange;
+    let gYrange;
+    let size = 30; //Is not adujusted for mobile
+    
+    p5.setup = () => {
+      cnv = p5.createCanvas(p5.windowWidth, p5.windowHeight);
+      var xPos = (p5.windowWidth - p5.width) / 2;
+      var yPos = (p5.windowHeight - p5.height) / 2;
+      cnv.position(xPos, yPos);
+      p5.noStroke();
+      p5.background(254,222,168);
+      // console.log(genPer[0].val);
+
+      var width = p5.windowWidth;
+      var height = p5.windowHeight;
+
+      //Grid
+      p5.push();
+      p5.rectMode(p5.CENTER);
+      p5.strokeWeight(4);
+      p5.stroke(0);
+      p5.rect(width/2, height/2, 0, height-size);
+      p5.rect(width/2, height/2, p5.dist(width/2,size,width/2,height-size), 0);
+      p5.pop();
+
+      gXrange = [width/2-p5.dist(width/2,size,width/2,height/2),width/2+p5.dist(width/2,size,width/2,height/2)];
+      gYrange = [size, height-size];
+
+      p5.push();
+      p5.fill(0);
+      p5.textSize(size);
+      p5.textAlign(p5.RIGHT, p5.CENTER);
+      p5.text('MASK',width/2-p5.dist(width/2,size,width/2,height/2), height/2);
+      p5.text('SPIRITUAL ',width/2,size);
+      p5.textAlign(p5.LEFT, p5.CENTER);
+      p5.text('MIRROR',width/2+p5.dist(width/2,size,width/2,height/2), height/2);
+      p5.text(' SECULAR',width/2,height-size);
+      p5.textAlign(p5.LEFT, p5.TOP);
+      p5.pop();
+
+      let x = 0;
+      let y = 0;
+      let color = p5.color(0,0,0);
+
+      if(age == 'youth'){
+        color = p5.color(157,7,7);
+      }else if(age == 'young adult'){
+        color = p5.color(18,153,221);
+      }else if(age == 'middle age'){
+        color = p5.color(184,205,88);
+      }else if(age == 'older age'){
+        color = p5.color(222,114,43);
+      }
+
+      let genderNum = 0;
+      let isGenderSame = false;
+      for(var g=0; g<genPer.length; g++){
+        if(genPer[g].val != ""){
+          genderNum++;
+        }
+        if(genPer[g].val == gen){
+          isGenderSame = true;
+        }
+      }
+
+      if(genderNum > 1){
+        x-=1;
+      }else if(genderNum==1 && isGenderSame){
+        x+=1;
+      }
+
+      let thinkAmount = 0;
+      if(think >= 5){
+        thinkAmount = p5.abs(p5.map(think,5,10,1,6));
+        if(thinkAmount == 6){
+          thinkAmount = 5;
+        }
+        x+=thinkAmount;
+      }else{
+        thinkAmount = p5.abs(p5.map(think,0,4,5,1));
+        x-=thinkAmount;
+      }
+
+      if(speech){
+        x+=2;
+      }else{
+        x-=2;
+      }
+
+      if(numOfPer > 1){
+        y+=1;
+      }else if(numOfPer <= 1){
+        y-=1;
+      }
+
+      let digiRep = 0;
+      if(digitalR >= 5){
+        digiRep = p5.abs(p5.map(digitalR,5,10,1,6));
+        if(digiRep == 6){
+          digiRep = 5;
+        }
+        y+=digiRep;
+      }else{
+        digiRep = p5.abs(p5.map(digitalR,0,4,5,1));
+        y-=digiRep;
+      }
+
+      if(place){
+        y+=2;
+      }else{
+        y-=2;
+      }
+
+      if(ver == 'same'){
+        y-=2;
+        x+=2;
+      }else if(ver == ''){
+        y+=0;
+        x+=0;
+      }else{
+        y+=2;
+        x-=2;
+      }
+
+      p5.fill(color);
+      let mapX = p5.map(x,-10,10,gXrange[0],gXrange[1]);
+      let mapY = p5.map(y,-10,10,gYrange[0],gYrange[1]);
+      p5.ellipse(mapX,mapY,size,size);
+      p5.textAlign(p5.LEFT,p5.TOP);
+      p5.textSize(size);
+      p5.text("Your Result on the Compass!",10,10,400,100);
+      // p5.noFill();
+      // p5.stroke(0);
+      // p5.strokeWeight(5);
+      // p5.rect(0,0,300,100);
+      let button;
+      button = p5.createButton('About');
+      button.position(10, 40);
+      button.mousePressed(goToAbout);
+    };
+  };
+  
+  useEffect(() => {
+   new p5(Sketch);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  
+  return (
+    <></>
+  );
+ };

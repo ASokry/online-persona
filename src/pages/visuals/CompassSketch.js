@@ -9,7 +9,7 @@ const CompassSketch = props => {
     var keys;
     let gXrange;
     let gYrange;
-    let size = 30;
+    let size = 30; //Is not adujusted for mobile
 
     const getData = (d) => {
       // console.log(d.val());

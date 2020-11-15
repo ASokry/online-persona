@@ -20,12 +20,20 @@ export default function AboutPage() {
           <div>
           A dot is placed on a grid-like chart for every user who has completed the survey. The dot represents every user and is placed on the chart based on their responses. Along each axis represents a pair of opposing views towards the idea of the online persona. On the X-axis is the idea of the Mask vs the Mirror where the Mask represents the online persona as another person or entity and the Mirror represents the same person or a reflection of self. On the Y-axis is the idea of the spiritual vs the secular, where the spiritual side views the online persona as something more than just a digital representation of self and the secular side views it as having no special significance. The colors of the dots are based on what age group the users are from. Youths being red, young adults are blue, middle age is green, and older age is orange.
           </div>
+          <ul className="visual-tag">
+            <li>P5.js</li>
+            <li>React.js</li>
+          </ul>
         </div>
         <div className="visual">
-          <h4>Word Scrolling</h4>
+          <h4>Word Scrolling (Coming Soon)</h4>
           <div>
           Personal definitions of what is an online persona scroll from the right side to the left. A way to truly best witness any underlying connections that we all have in viewing and defining online personas.
           </div>
+          <ul className="visual-tag">
+            <li>P5.js</li>
+            <li>React.js</li>
+          </ul>
         </div>
         <div className="visual">
           <h4>The Crossing</h4>

@@ -25,7 +25,7 @@ export default function HomePage() {
       <div className="home-header">
         <h1>Online <b style={{color: "#9900ff"}}>Persona</b></h1>
         <div className="header-description">
-          Participants complete a survey, answering some questions pertaining to their opinions and views of their online personas. Responses will be archived and used to generate real-time data visualizations. It is recommended to take the survey first before viewing the resulting data visualization as some questions are intentionally left open-ended and abstract to prompt a response that best reflects your interpretation of the question and purest reaction.
+          Participants complete a survey, answering some questions pertaining to their opinions and views of their online personas. Responses will be archived and used to generate real-time data visualizations. It is recommended to take the survey first before viewing the resulting data visualization as some questions are intentionally left open-ended and abstract to prompt a response that best reflects one's interpretation of the question and purest reaction.
         </div>
         <nav><Link to="/">HOME</Link> | <Link to="/form">TAKE THE SURVEY</Link> | <Link to="/about">ABOUT</Link></nav>
       </div>

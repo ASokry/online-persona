@@ -41,6 +41,22 @@
   color: #9900ff;
 }
 
+.visual-tag {
+  list-style-type: none;
+  margin-bottom: 5em;
+  padding: 0;
+}
+
+.visual-tag li {
+  float: left;
+  padding: 4px;
+  margin-right: 5px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: whitesmoke;
+  background-color: #444444;
+}
+
 @media only screen and (max-width: 600px) {
   .about {
     margin: 1em 1em;
