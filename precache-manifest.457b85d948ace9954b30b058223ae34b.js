@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "280b57901c4aeb2fb473",
+    "revision": "e047e366e64c340df4ba",
     "url": "/online-persona/static/css/main.64144351.chunk.css"
   },
   {
-    "revision": "280b57901c4aeb2fb473",
-    "url": "/online-persona/static/js/main.330895c2.chunk.js"
+    "revision": "e047e366e64c340df4ba",
+    "url": "/online-persona/static/js/main.a9074ccd.chunk.js"
   },
   {
     "revision": "d8c33a4680920d280eb4",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/online-persona/static/media/compass.79fdd1f5.png"
   },
   {
-    "revision": "01922d37066efeb6ca6810c9eea1daf5",
+    "revision": "6f74e3fb6b812194f82246d4082051ac",
     "url": "/online-persona/index.html"
   }
 ];
