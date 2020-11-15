@@ -102,7 +102,7 @@ export default function MyForm(props){
     function handleSubmit(event) {
         // console.log("submitted");
         event.preventDefault();
-        // writeUserData();
+        writeUserData();
         setConfirmed(true);
         // window.location.href = process.env.PUBLIC_URL + "/#/about";
     }
