@@ -3,9 +3,15 @@ import * as p5 from "p5";
 import * as firebase from 'firebase';
 
 const CompassSketch = props => {
+  function GoHome() {
+    window.location.href = process.env.PUBLIC_URL + "/#/home";
+    window.location.reload();
+  }
+
   const Sketch = p5 => {
     var cnv;
     var data;
+    // var dots = [];
     var keys;
     let gXrange;
     let gYrange;
@@ -21,6 +27,7 @@ const CompassSketch = props => {
         // var init = data[k].age;
         // console.log(init);
         let dot = new Dot(data[k]);
+        // dots[i] = dot;
       }
     }
 
@@ -66,6 +73,8 @@ const CompassSketch = props => {
       gYrange = [size, height-size];
       //let mapY = p5.map(y,-10,10,yRange[0],yRange[1]);
 
+      // console.log(gXrange[0]);
+
       //Grid Text
       p5.push();
       p5.fill(0);
@@ -80,6 +89,12 @@ const CompassSketch = props => {
       p5.pop();
       
       ref.on('value',getData,errData);
+      // console.log(dots.length);
+
+      let button;
+      button = p5.createButton('HOME');
+      button.position(width-80, height-40);
+      button.mousePressed(GoHome);
     };
 
     const Dot = (arr) => {
@@ -167,10 +182,18 @@ const CompassSketch = props => {
         x-=2;
       }
 
+
       p5.fill(color);
       let mapX = p5.map(x,-10,10,gXrange[0],gXrange[1]);
       let mapY = p5.map(y,-10,10,gYrange[0],gYrange[1]);
       p5.ellipse(mapX,mapY,size,size);
+      p5.fill(255);
+      p5.textAlign(p5.CENTER);
+      // let coord = p5.str(mapX) + p5.str(mapY);
+      // function getMapping(){
+      //   return coord;
+      // }
+      // p5.text("0",mapX,mapY);
     };
   };
 

@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import './customHome.css';
 import CompassImg from './img/compass.png';
+import UserDefinedImg from './img/userDefined.png';
 import * as firebase from 'firebase';
 import { Link } from 'react-router-dom';
 
@@ -33,14 +34,14 @@ export default function HomePage() {
       <div className="home-visuals">
         <div className="visual">
           <h4><Link to="/compass">Compass</Link></h4>
-          <div>
+          <div className="img-container">
             <Link to="/compass"><img src={CompassImg} className="visual-img"></img></Link>
           </div>
         </div>
         <div className="visual">
-          <h4>Word Scrolling</h4>
-          <div>
-            (Coming Soon)
+          <h4><Link to="/user-defined">User Defined</Link></h4>
+          <div className="img-container">
+            <Link to="/user-defined"><img src={UserDefinedImg} className="visual-img"></img></Link>
           </div>
         </div>
         <div className="visual">

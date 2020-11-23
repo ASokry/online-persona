@@ -2,10 +2,11 @@ import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 //import pages
-import Home from './pages/home/Home'
+import Home from './pages/home/Home';
 import About from './pages/about/About';
 import Form from './pages/form/Form';
-import Compass from './pages/visuals/Compass'
+import Compass from './pages/visuals/Compass';
+import UserDefined from './pages/visuals/UserDefined';
 
 export default function Routes(props) {
 
@@ -22,6 +23,9 @@ export default function Routes(props) {
         },{
             path: '/compass',
             component: Compass
+        },{
+            path: '/user-defined',
+            component: UserDefined
         }
     ]
     // console.log(URL);

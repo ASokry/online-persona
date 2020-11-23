@@ -39,6 +39,16 @@
 .visual-img {
   width: 100%;
   height: auto;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.img-container {
+  background-color: #222222;
+}
+
+.visual-img:hover {
+  opacity:0.8;
 }
 
 @media only screen and (max-width: 600px) {
