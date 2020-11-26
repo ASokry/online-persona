@@ -114,11 +114,11 @@ const CompassSketch = props => {
 
       let genderNum = 0;
       let isGenderSame = false;
-      for(var g=0; g<arr.genderPersonas.length; g++){
-        if(arr.genderPersonas[g] != ""){
+      for(var g=0; g<arr.genderPersonas.objects.length; g++){
+        if(arr.genderPersonas.objects[g].val != ""){
           genderNum++;
         }
-        if(arr.genderPersonas[g] == arr.gender){
+        if(arr.genderPersonas.objects[g].val == arr.gender){
           isGenderSame = true;
         }
       }

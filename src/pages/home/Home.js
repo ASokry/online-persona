@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react';
 import './customHome.css';
 import CompassImg from './img/compass.png';
 import UserDefinedImg from './img/userDefined.png';
+import TheCrossingImg from './img/theCrossing.png';
 import * as firebase from 'firebase';
 import { Link } from 'react-router-dom';
 
@@ -45,9 +46,9 @@ export default function HomePage() {
           </div>
         </div>
         <div className="visual">
-          <h4>The Crossing</h4>
+          <h4><Link to="/the-crossing">The Crossing</Link></h4>
           <div>
-            (Coming Soon)
+            <Link to="/the-crossing"><img src={TheCrossingImg} className="visual-img"></img></Link>
           </div>
         </div>
       </div>

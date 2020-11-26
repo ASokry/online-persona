@@ -7,6 +7,7 @@ import About from './pages/about/About';
 import Form from './pages/form/Form';
 import Compass from './pages/visuals/Compass';
 import UserDefined from './pages/visuals/UserDefined';
+import TheCrossing from './pages/visuals/TheCrossing';
 
 export default function Routes(props) {
 
@@ -26,6 +27,9 @@ export default function Routes(props) {
         },{
             path: '/user-defined',
             component: UserDefined
+        },{
+            path: '/the-crossing',
+            component: TheCrossing
         }
     ]
     // console.log(URL);

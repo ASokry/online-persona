@@ -33,7 +33,6 @@ firebase.initializeApp(firebaseConfig);
 // )
 
 ReactDOM.render(
-    <MyRoute></MyRoute>,
-    document.getElementById('root'
-  )
+  <MyRoute></MyRoute>,
+  document.getElementById('root')
 );

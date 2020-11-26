@@ -25,6 +25,7 @@ export default function AboutPage() {
           <ul className="visual-tag">
             <li>P5.js</li>
             <li>React.js</li>
+            <li>Firebase</li>
           </ul>
         </div>
         <div className="visual">
@@ -35,13 +36,19 @@ export default function AboutPage() {
           <ul className="visual-tag">
             <li>P5.js</li>
             <li>React.js</li>
+            <li>Firebase</li>
           </ul>
         </div>
         <div className="visual">
           <h4>The Crossing</h4>
           <div>
-            (Coming Soon)
+          Colored spheres traverse from one side to another in a virtual environment, exiting the real world gate(the yellow circle), passing through the transition gate(the rainbow circle in the middle), and entering the online gate(the blue circle). The beginning color of the sphere is based on what gender the user identifies with in the real world and as the spheres pass the transition gate, they change color based on what genders the user identifies with when online. Male is purple, female is white, nonbinary is yellow, trans is blue, genderqueer is green, agender is orange, other is pink, and users who prefer not to answer is brown with a wireframe texture.
           </div>
+          <ul className="visual-tag">
+            <li>Three.js</li>
+            <li>React.js</li>
+            <li>Firebase</li>
+          </ul>
         </div>
       </div>
     </div>
