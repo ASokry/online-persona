@@ -9,7 +9,7 @@ export default function AboutPage() {
         <h1>Online <b style={{color: "#9900ff"}}>Persona</b></h1>
         <div className="about-description">
           <h3 className="about-sub">About the Project</h3>
-          A project serving as an exploration of how people interpret and associate with their online identities and internet personas to reveal hidden connections within the collective unconscious. 
+          A project that explores how people associate with their online identities and internet personas to reveal hidden connections within the collective unconscious.Participants complete a survey, answering various questions pertaining to their opinions and views of their online personas. Responses are archived and used to generate real-time data visualizations. It is recommended to take the survey first before viewing the resulting data visualization as some questions are intentionally left open-ended and abstract to prompt a response that best reflects one's interpretation of the question and purest reaction.
           <br></br>
           Below are data visualizations generated from the survey database.
         </div>

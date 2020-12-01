@@ -63,7 +63,7 @@ const UserDefinedSketch = props => {
       p5.push();
       if(yScroll > -(height/2)*defsToScoll.length){
         // console.log(yScroll);
-        yScroll--;
+        yScroll-=2;
       }else{
         // console.log('fin');
         // defs.splice(0,1);
