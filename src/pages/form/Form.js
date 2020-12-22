@@ -102,7 +102,7 @@ export default function MyForm(props){
     function handleSubmit(event) {
         // console.log("submitted");
         event.preventDefault();
-        writeUserData();
+        // writeUserData();
         setConfirmed(true);
         // window.location.href = process.env.PUBLIC_URL + "/#/about";
     }
@@ -335,6 +335,8 @@ export default function MyForm(props){
                 <h1>Online <b style={{color: "#9900ff"}}>Persona</b></h1>
                 <div className="form-description">
                   Take your time filling out this form. After the form has been filled out completely, please click on the Submit button at the bottom of the page.
+                  <br></br><br></br>
+                  <b>Note: New Responses will no longer be saved in the database, but you can still fill out this form to see where you'll be placed on the Compass visual.</b>
                 </div>
                 <nav><Link to="/">HOME</Link> | <Link to="/form">TAKE THE SURVEY</Link> | <Link to="/about">ABOUT</Link></nav>
             </div>
